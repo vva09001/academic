@@ -1,0 +1,18 @@
+$primaryColor: #203e7d;
+$secondColor: #0060ae;
+
+.dataBox {
+  flex-direction: column;
+  text-align: center;
+  background: $primaryColor;
+  border-radius: 2px;
+  p {
+    color: #fff;
+    margin: 0;
+    padding: 5px;
+  }
+  #title {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

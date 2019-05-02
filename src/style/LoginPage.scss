@@ -1,0 +1,57 @@
+$primaryColor: #203e7d;
+$secondColor: #0060ae;
+
+.loginPage {
+  height: 100vh;
+  background: $primaryColor;
+  display: block;
+  .loginForm {
+    max-width: 350px;
+    padding: 10% 0 0;
+    margin: auto;
+    @media all and (max-width: 414px) {
+      max-width: 300px;
+    }
+    form {
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      border-radius: 2px;
+      background: #fff;
+      display: inline-block;
+      input {
+        margin-bottom: 10px;
+        width: 100%;
+        font-size: 13px;
+      }
+      p {
+        margin: 0;
+        font-size: 11px;
+        margin: 5px 0;
+      }
+      .loginButton {
+        background: #0060ae;
+        color: white;
+        font-size: 15px;
+        height: 40px;
+        width: 50%;
+        &:hover {
+          background: $primaryColor;
+        }
+      }
+      .googleButton {
+        height: 40px;
+        span,
+        div {
+          padding: 5px !important;
+          color: #000;
+          font-weight: 400 !important;
+        }
+        &:hover div,
+        &:hover {
+          background: #f3f3f3 !important;
+        }
+      }
+    }
+  }
+}

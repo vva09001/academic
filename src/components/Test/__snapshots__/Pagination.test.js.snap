@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination Component Test Pagination component it work 1`] = `
+<div
+  className="pagination"
+>
+  <div
+    className="pageInfo"
+  >
+    <span>
+      Trang 
+    </span>
+    <input
+      min="1"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      type="number"
+    />
+     
+    / 
+  </div>
+</div>
+`;
+
+exports[`Pagination Component Test Search component it work 1`] = `
+<div
+  className="pagination"
+>
+  <div
+    className="pageInfo"
+  >
+    <span>
+      Trang 
+    </span>
+    <input
+      min="1"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      type="number"
+    />
+     
+    / 
+  </div>
+</div>
+`;

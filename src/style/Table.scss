@@ -1,0 +1,89 @@
+$primaryColor: #203e7d;
+$secondColor: #0060ae;
+$thirdColor: #e9ca73; 
+
+.tableHeading {
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  border-radius: 2px 2px 0px 0px;
+  border-bottom: 2px solid $primaryColor;
+  div {
+    &:nth-child(even) {
+      justify-content: flex-end;
+    }
+    &:nth-child(odd) {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    flex: 1;
+    display: flex;
+  }
+}
+
+thead {
+  font-size: 12px;
+  cursor: pointer;
+  background: #f3f3f3;
+}
+
+tbody {
+  font-size: 11px;
+  tr {
+    td {
+      cursor: pointer;
+      &:hover {
+        color: $thirdColor;
+      }
+    }
+    &:nth-child(even){
+      background: #f3f3f3;
+    }
+    &:hover {
+      background: $primaryColor;
+      color: #fff;
+      .editIcon {
+        path {
+          fill: #fff;
+        }
+      }
+      td {
+        a {
+          color: #fff;
+          text-decoration: none;
+          &:hover {
+            color: $thirdColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Responsive for mobile screen from 414px width*/
+
+@media only screen and (max-width: 414px) {
+  .tableHeading {
+    div {
+      &:nth-child(odd) {
+        font-size: 12px;
+      }
+    }
+  }
+  thead {
+    font-size: 9px;
+  }
+  tbody {
+    font-size: 8px;
+  }
+  .sBirth, .sIdcard, .sClass, .sProgram {
+    display: none;
+  }
+  .cStartDate, .ceEndDate, .cEndDate {
+    display: none;
+  }
+}
+
+/*Responsive for mobile screen from 768px width*/

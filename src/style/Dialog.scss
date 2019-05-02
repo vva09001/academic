@@ -1,0 +1,435 @@
+$primaryColor: #203e7d;
+$secondColor: #0060ae;
+$thirdColor: #e9ca73;
+
+/*Style student dialog scss*/
+
+.sDialog {
+  border-radius: 2px;
+  background: #dcdcdc;
+  display: flex;
+  height: 400px;
+  .sSideDialog {
+    display: flex;
+    width: 250px;
+    background: $secondColor;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    .profileAvatar {
+      display: inline-block;
+      background: #fff;
+      height: 125px;
+      width: 125px;
+      border-radius: 50%;
+      margin-top: 10px;
+      img {
+        height: 125px;
+        width: 125px;
+        border-radius: 50%;
+      }
+    }
+    input {
+      cursor: default;
+      background: transparent;
+      box-shadow: none;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+    }
+    .closeBtn,
+    .saveBtn {
+      position: absolute;
+      bottom: 0;
+      width: 180px;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+    }
+    .closeDialogBtn {
+      left: 0;
+      margin-left: 105px;
+    }
+    .saveDialogBtn {
+      left: 0;
+      margin-left: 10px;
+    }
+  }
+  .sDialogBody {
+    width: 500px;
+    .sDialogTitle {
+      cursor: default;
+      display: flex;
+      align-items: center;
+      background: $secondColor;
+      height: 40px;
+      .sTitle {
+        font-size: 14px;
+        color: #fff;
+        margin-left: 10px;
+        width: 100%;
+      }
+      .sXBtn {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10px;
+      }
+    }
+    .sDialogContent {
+      margin: 10px;
+      background: #fff;
+      border-radius: 2px;
+      height: 340px;
+      overflow-y: auto;
+    }
+  }
+}
+
+.cDialog {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background: #dcdcdc;
+  .cTitle {
+    min-height: 30px;
+    background: $secondColor;
+    display: flex;
+    align-items: center;
+    .title {
+      flex: 1;
+      font-size: 14px;
+      color: #fff;
+      margin-left: 10px;
+    }
+    .cXBtn {
+      margin-right: 10px;
+    }
+  }
+  .cDialogContent {
+    background: #fff;
+    margin: 10px;
+    padding: 5px;
+    // min-height: 200px;
+    overflow-y: auto;
+    border-radius: 2px;
+  }
+  .cDialogFooter {
+    margin: 10px;
+    margin-top: 0;
+    display: flex;
+    justify-content: flex-end;
+    .closeBtn {
+      background: $secondColor;
+      color: #fff;
+      font-weight: 400;
+      &:hover {
+        background: $thirdColor;
+        color: $primaryColor;
+        font-weight: bold;
+      }
+    }
+    .saveBtn {
+      margin-right: 10px;
+    }
+  }
+}
+
+.lsDialog {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  .lsTitle {
+    display: flex;
+    align-items: center;
+    background: $secondColor;
+    color: #fff;
+    min-height: 35px;
+    .title {
+      flex: 1;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+    .XBtn {
+      margin-right: 10px;
+    }
+  }
+  .lsDialogContent {
+    height: 400px;
+    padding: 10px;
+    background: #dcdcdc;
+    overflow-y: auto;
+  }
+  .lsDialogFooter {
+    min-height: 35px;
+    background: $secondColor;
+    .lsBtn {
+      background: $secondColor;
+      border-radius: 0px 0px 2px 2px;
+      padding: 5px;
+      width: 100%;
+      height: 35px;
+      color: #fff;
+      font-size: 14px;
+      &:hover {
+        background: $thirdColor;
+        color: $primaryColor;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/*Styling Button*/
+.closeBtn,
+.saveBtn {
+  font-size: 13px;
+  font-weight: bold;
+  width: 180px;
+  color: $primaryColor;
+  background: #fff;
+  &:hover {
+    background: $thirdColor;
+  }
+}
+
+.closeDialogBtn,
+.saveDialogBtn {
+  width: 85px !important;
+}
+
+.disableBtn {
+  cursor: not-allowed;
+  background: #dcdcdc;
+  color: $primaryColor;
+  outline-style: none;
+  &:hover {
+    background: #dcdcdc;
+  }
+}
+
+/*styling label input*/
+.form {
+  padding: 5px;
+  .formItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  label {
+    width: 100px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+  }
+  input {
+    cursor: default;
+    width: 270px;
+    background: transparent;
+    box-shadow: none;
+    font-size: 11px;
+    padding: 0;
+  }
+  textarea {
+    border: none;
+    font-size: 11px;
+    width: 270px;
+    background: #dcdcdc;
+    outline-style: none;
+  }
+}
+.addForm,
+.editForm {
+  input {
+    cursor: pointer;
+    border-radius: 2px;
+    background: #dcdcdc !important;
+    min-height: 30px;
+    padding-left: 5px;
+  }
+  select {
+    border: none;
+    outline-style: none;
+    border-radius: 2px;
+    background: #dcdcdc;
+    min-height: 30px;
+    font-size: 11px;
+    width: 270px;
+  }
+  .gender {
+    display: flex;
+    align-items: center;
+    input {
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+    }
+    span {
+      margin-right: 15px;
+      font-size: 11px;
+    }
+  }
+}
+.detailForm {
+  textarea {
+    background: #fff;
+  }
+}
+
+/*Responsive for mobile screen from 414px width*/
+
+@media only screen and (max-width: 414px) {
+  .MuiDialog-paper-5 {
+    margin: 0 !important;
+  }
+
+  .sDialog {
+    flex-direction: column;
+    width: 300px;
+    height: 450px;
+    overflow: hidden;
+    .sSideDialog {
+      width: 100%;
+      min-height: 135px;
+      .profileAvatar {
+        width: 100px;
+        height: 100px;
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+      input {
+        height: 25px;
+        font-size: 12px;
+      }
+      .closeBtn,
+      .saveBtn {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        padding: 5px 10px;
+        margin-bottom: 0px;
+      }
+      .closeDialogBtn,
+      .saveDialogBtn {
+        width: 50% !important;
+        // margin: 0;
+      }
+      .closeDialogBtn {
+        right: 0;
+        left: auto;
+        margin: 0;
+        border-radius: 0 0 2px 0;
+        border-left: 1px solid #dcdcdc;
+      }
+      .saveDialogBtn {
+        left: 0;
+        margin: 0;
+        border-radius: 0 0 0 2px;
+        border-right: 1px solid #dcdcdc;
+      }
+    }
+    .sDialogBody {
+      width: 100%;
+      .sDialogTitle {
+        display: none;
+      }
+      .sDialogContent {
+        margin: 5px;
+        height: 275px;
+      }
+    }
+  }
+
+  .cDialog {
+    width: 300px;
+    .cTitle {
+      .title {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .lsDialog {
+    width: 300px;
+    .lsTitle {
+      min-height: 35px;
+      .title {
+        font-size: 12px;
+      }
+    }
+    .lsDialogContent {
+      height: 400px;
+      padding: 10px;
+      background: #dcdcdc;
+      overflow-y: auto;
+    }
+    .lsDialogFooter {
+      min-height: 35px;
+      background: $secondColor;
+      .lsBtn {
+        background: $secondColor;
+        border-radius: 0px 0px 2px 2px;
+        padding: 5px;
+        width: 100%;
+        height: 35px;
+        color: #fff;
+        font-size: 12px;
+        &:hover {
+          background: $thirdColor;
+          color: $primaryColor;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .closeBtn,
+  .saveBtn {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    background: $secondColor;
+    &:hover {
+      background: $thirdColor;
+      color: #0060ae;
+      font-weight: bold;
+    }
+  }
+
+  .form {
+    label {
+      width: 85px;
+      font-size: 10px;
+    }
+    input {
+      font-size: 10px;
+      width: 195px;
+    }
+    textarea {
+      font-size: 10px;
+      width: 195px;
+    }
+  }
+
+  .addForm,
+  .editForm {
+    select {
+      font-size: 10px;
+      width: 195px;
+      min-height: 30px;
+    }
+    .gender {
+      input {
+        width: 13px;
+        height: 13px;
+        margin-right: 10px;
+      }
+      span {
+        margin-right: 15px;
+        font-size: 10px;
+      }
+    }
+  }
+}

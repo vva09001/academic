@@ -1,0 +1,50 @@
+$primaryColor: #203e7d;
+$secondColor: #0060ae;
+
+.filter {
+  z-index: 1;
+  position: absolute;
+  display: none;
+  background: #fff;
+  box-shadow: 3px 3px 5px 0px #777;
+  padding: 0px;
+  li {
+    list-style: none;
+    font-size: 10px;
+    font-weight: 400;
+    padding: 5px 10px;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+      background: $primaryColor;
+    }
+  }
+}
+
+.status:hover .studentStatus {
+  display: block
+}
+
+.program:hover .allProgram {
+  display: block
+}
+
+.classesStatus:hover .classStatus {
+  display: block
+}
+
+/*Responsive for mobile screen from 414px width*/
+
+@media only screen and (max-width: 414px) {
+  .status:hover .studentStatus {
+    display: none
+  }
+  
+  .program:hover .allProgram {
+    display: none
+  }
+  
+  .classesStatus:hover .classStatus {
+    display: none
+  }
+}

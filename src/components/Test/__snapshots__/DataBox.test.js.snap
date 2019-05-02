@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataBox Component Test DataBox component it work 1`] = `
+<div
+  className="dataBox"
+>
+  <p
+    id="title"
+  />
+  <p />
+</div>
+`;

@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import "./LoginPage.scss";
+@import "./Navigation.scss";
+@import "./LoggedPage.scss";
+@import "./SideMenu.scss";
+@import "./Dashbroad.scss";
+@import "./DataBox.scss";
+@import "./Search.scss";
+@import "./Table.scss";
+@import "./Svg.scss";
+@import "./Loading.scss";
+@import "./Notice.scss";
+@import "./Pagination.scss";
+@import "./Filter.scss";
+@import "./Dialog.scss";
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+input {
+  outline: 0;
+  background: #dcdcdc;
+  border: 0;
+  border-radius: 2px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 6px -6px #dcdcdc;
+}
+
+button {
+  border: 0;
+  padding: 5px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.errorMsg {
+  color: red;
+  margin: 0;
+  font-size: 11px;
+  margin: 5px 0;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.unClickAble {
+  // background: #dcdcdc !important;
+  opacity: 0.6;
+  td {
+    cursor: no-drop !important;
+    &:hover {
+      color: #000;
+    }
+  }
+  &:hover {
+    background: none;
+    color:  #000;
+  }
+  &:nth-child(even){
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/*Responsive for mobile screen from 414px width*/
+
+@media only screen and (max-width: 414px) {
+  .errorMsg {
+    font-size: 9px;
+  }
+}

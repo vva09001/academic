@@ -1,0 +1,15 @@
+.dbContainer {
+  display: flex;
+  flex-direction: column;
+  div {
+    display: flex;
+    justify-content: center;
+    div {
+      flex: 1;
+      margin: 5px;
+    }
+    @media all and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+}

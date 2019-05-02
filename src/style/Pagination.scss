@@ -1,0 +1,44 @@
+$primaryColor: #203e7d;
+$secondColor: #0060ae;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  max-height: 35px;
+  .pageInfo {
+    padding: 5px 0;
+    margin: 0 10px;
+    input {
+      background: #dcdcdc;
+      max-height: 25px;
+      max-width: 70px;
+      box-shadow: none;
+    }
+  }
+  button {
+    font-size: 12px;
+    max-height: 40px;
+    min-width: 85px;
+    color: #fff;
+    background: $primaryColor;
+    outline-style: none;
+    &:hover {
+      background: $secondColor;
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .pagination {
+    font-size: 12px;
+    max-height: 30px;
+    button {
+      font-size: 10px;
+      min-width: 70px;
+    }
+    
+  }
+}

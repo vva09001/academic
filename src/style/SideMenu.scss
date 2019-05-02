@@ -1,0 +1,75 @@
+$primaryColor: #203e7d;
+$secondColor: #0060ae;
+
+.sideMenu {
+  position: fixed;
+  width: 220px;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  margin-top: 40px;
+  overflow-y: auto;
+  background-color: $secondColor;
+  color: #fff;
+  ul.components {
+    border-bottom: 2px solid $primaryColor;
+  }
+  ul {
+    li {
+      span {
+        padding: 10px;
+        font-size: 14px;
+        display: block;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          background: $primaryColor;
+          color: white;
+          text-decoration: none;
+        }
+      }
+      span[data-toggle="collapse"] {
+        position: relative;
+      }
+      .dropdown-toggle::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+      }
+      ul {
+        span {
+          font-size: 13px !important;
+          padding-left: 30px !important;
+        }
+      }
+    }
+    ul li.active > span,
+    span[aria-expanded="true"] {
+      color: #fff;
+      background: $secondColor;
+    }
+  }
+}
+
+/*Responsive for mobile screen from 414px width*/
+
+@media only screen and (max-width: 414px) {
+  .sideMenu {
+    margin-top: 35px;
+    ul {
+      li {
+        span {
+          font-size: 12px;
+        }
+        ul {
+          span {
+            font-size: 11px !important;
+          }
+        }
+      }
+    }
+  }
+}

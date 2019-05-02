@@ -1,0 +1,59 @@
+$primaryColor: #203e7d;
+$secondColor: #0060ae;
+
+.navigation {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+  align-items: center;
+  max-height: 40px;
+  border-bottom: 2px solid $primaryColor;
+  background-color: #fff;
+  #menuIcon {
+    padding-left: 5px;
+    @media all and (min-width: 1025px) {
+      display: none;
+    }
+  }
+  #navContent {
+    display: flex;
+    @media all and (max-width: 1024px) {
+      display: none;
+    }
+    div {
+      flex: 1;
+    }
+    #title {
+      padding-left: 10px;
+      font-size: 17px;
+      font-weight: bold;
+    }
+    #username {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10px;
+      p {
+        margin: 0;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+  @media all and (max-width: 1024px) {
+    background-color: $primaryColor;
+  }
+}
+
+/*Responsive for mobile screen from 414px width*/
+
+@media only screen and (max-width: 414px) {
+  .navigation {
+    max-height: 35px;
+    #logo {
+      width: 180px;
+      height: 35px;
+    }
+  }
+}
