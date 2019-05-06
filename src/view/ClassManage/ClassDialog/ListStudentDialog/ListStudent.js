@@ -23,7 +23,7 @@ const ListStudent = props => {
       <ListDialog
         open={props.isListStudentDialogOpen}
         handleClose={() => props.closeListStudentDialog()}
-        dialogName={`Danh sách học sinh trong lớp ${props.classId}`}
+        dialogName={`Danh sách sinh viên trong lớp ${props.classId}`}
         content={content}
         footer={footer}
       />
@@ -32,7 +32,7 @@ const ListStudent = props => {
         handleClose={() => props.closeChangeClassConfirm()}
         confirmAction={changeClass}
         open={props.isChangeClassConfirmOpen}
-        title={`Chuyển lớp học chính cho học sinh có mã số ${
+        title={`Chuyển lớp học chính cho sinh viên có mã số ${
           props.studentId
         } sang lớp này`}
       />

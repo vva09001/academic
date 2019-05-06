@@ -5,7 +5,7 @@ const Footer = props => {
   return (
     <React.Fragment>
       <ButtonClick
-        title="Thêm học sinh vào lớp"
+        title="Thêm sinh viên vào lớp"
         classes="lsBtn"
         onClick={() => props.openListAddStudentDialog()}
       />

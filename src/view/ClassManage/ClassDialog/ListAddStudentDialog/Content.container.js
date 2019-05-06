@@ -1,13 +1,19 @@
 import { connect } from "react-redux";
 import Content from "./Content";
 import { getWaitingStudents } from "../../../../store/slice/class.slice";
-import { openAddStudentConfirm } from "../../../../store/slice/notice.slice";
+import {
+  openOutDateInput,
+  openAddStudentConfirm,
+  openAddStudentNoMainClassConfirm
+} from "../../../../store/slice/notice.slice";
 
 const mapDispatchToProps = dispatch => ({
   getWaitingStudents: (searchAddStudent, ss_id, programme_id, page) =>
     dispatch(getWaitingStudents(searchAddStudent, ss_id, programme_id, page)),
-  openAddStudentConfirm: studentData =>
-    dispatch(openAddStudentConfirm(studentData))
+  openOutDateInput: studentData => dispatch(openOutDateInput(studentData)),
+  openAddStudentConfirm: () => dispatch(openAddStudentConfirm()),
+  openAddStudentNoMainClassConfirm: studentData =>
+    dispatch(openAddStudentNoMainClassConfirm(studentData))
 });
 
 const mapStateToProps = state => ({

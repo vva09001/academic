@@ -6,6 +6,7 @@ import { AllProgram, StudentStatus } from "../../../../components/Filter";
 import Pagination from "../../../../components/Pagination";
 import Search from "../../../../components/Search";
 import DeleteIcon from "../../../../assets/image/Delete.svg";
+import DropdownIcon from "../../../../assets/image/Dropdown.svg";
 
 const Content = props => {
   useEffect(() => {
@@ -35,7 +36,9 @@ const Content = props => {
           e._StudentStatus.ssId === 5 ||
           e._StudentStatus.ssId === 6
             ? null
-            : () => props.openAddStudentConfirm(e)
+            : e.vtcaMainClass.classId === ""
+            ? () => props.openAddStudentNoMainClassConfirm(e)
+            : () => props.openOutDateInput(e)
         }
       >
         <td>{e.studentId}</td>
@@ -53,7 +56,7 @@ const Content = props => {
         onKeyPressSearch={searchAddStudent =>
           props.getWaitingStudents(
             searchAddStudent,
-            props.ss_id,
+            "",
             props.programme_id,
             props.addStudentPage
           )
@@ -77,7 +80,7 @@ const Content = props => {
             <th>Mã</th>
             <th>Họ & Tên</th>
             <th className="status">
-              Trạng thái
+              Trạng thái <img className="dropdownIcon" src={DropdownIcon} alt="" />
               <StudentStatus
                 list={props.studentStatus}
                 filter={ss_id =>
@@ -91,7 +94,7 @@ const Content = props => {
               />
             </th>
             <th className="program">
-              Chuyên nghành
+              Chuyên nghành <img className="dropdownIcon" src={DropdownIcon} alt="" />
               <AllProgram
                 list={props.allProgram}
                 filter={programme_id =>

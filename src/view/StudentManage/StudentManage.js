@@ -7,6 +7,7 @@ import { StudentStatus, AllProgram } from "../../components/Filter";
 import Loading from "../../components/Loading";
 import AddIcon from "../../assets/svgComponents/AddStudent";
 import DeleteIcon from "../../assets/image/Delete.svg";
+import DropdownIcon from "../../assets/image/Dropdown.svg";
 import NoData from "../../theme/NoData";
 
 import StudentData from "./StudentData.container";
@@ -19,7 +20,7 @@ const StudentMange = props => {
   useEffect(() => {
     props.toStudent();
     props.getListStatus();
-  },[])
+  }, []);
 
   useEffect(() => {
     props.search(
@@ -33,7 +34,7 @@ const StudentMange = props => {
   /*------------------------------------------------ */
   /*function search */
   const onKeyPressSearch = searchKey => {
-    props.search(searchKey, props.class_id, props.ss_id, props.programme_id, 1);
+    props.search(searchKey, props.class_id, "", props.programme_id, 1);
   };
   return (
     <React.Fragment>
@@ -49,7 +50,7 @@ const StudentMange = props => {
             alt="delete"
             height={15}
             width={15}
-            onClick={() => props.search("","",2,"",1)}
+            onClick={() => props.search("", "", 2, "", 1)}
           />
         </div>
       )}
@@ -75,7 +76,7 @@ const StudentMange = props => {
             <th className="sPhone">Điện thoại</th>
             <th className="sClass">Mã lớp</th>
             <th className="status">
-              Trạng thái{" "}
+              Trạng thái <img className="dropdownIcon" src={DropdownIcon} alt="" />
               <StudentStatus
                 list={props.listStudentStatus}
                 filter={ss_id =>
@@ -90,7 +91,7 @@ const StudentMange = props => {
               />
             </th>
             <th className="program sProgram">
-              Chuyên nghành{" "}
+              Chuyên nghành <img className="dropdownIcon" src={DropdownIcon} alt="" />
               <AllProgram
                 list={props.allProgram}
                 filter={programme_id =>

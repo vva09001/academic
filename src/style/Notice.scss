@@ -15,16 +15,19 @@ $thirdColor: #e9ca73;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 150px;
+  // height: auto !important;
+  min-height: 150px;
   width: 400px;
   .noticeContent {
     color: $primaryColor;
     font-weight: bold;
     font-size: 14px;
     text-align: center;
+    margin-top: 5px;
   }
   .noticeFooter {
     margin-top: 15px;
+    margin-bottom: 10px;
     .confirmBtn,
     .cancelBtn {
       margin: 0 10px;
@@ -54,13 +57,14 @@ $thirdColor: #e9ca73;
     height: 100px;
     width: 275px;
     .noticeContent {
-      font-size: 12px;
+      font-size: 11px;
+      padding: 5px;
     }
     .noticeFooter {
       margin-top: 15px;
       .confirmBtn,
       .cancelBtn {
-        font-size: 12px;
+        font-size: 11px;
         padding: 5px 10px;
         height: 30px;
       }

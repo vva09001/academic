@@ -39,7 +39,10 @@ const slice = createSlice({
       expectedEndDate: "",
       endDate: "",
       csId: ""
-    }
+    },
+    /*Out Date state*/
+    validatedOutDate: "",
+    outDate_err: ""
   },
   reducers: {
     validateFullname: (state, action) => ({
@@ -161,7 +164,9 @@ const slice = createSlice({
         expectedEndDate: "",
         endDate: "",
         csId: ""
-      }
+      },
+      validatedOutDate: "",
+      outDate_err: ""
     }),
     validateClassId: (state, action) => ({
       ...state,
@@ -210,6 +215,11 @@ const slice = createSlice({
         ...state.validatedClassForm,
         csId: action.payload.value
       }
+    }),
+    validateOutDate: (state, action) => ({
+      ...state,
+      outDate_err: action.payload.error,
+      validatedOutDate: action.payload.value
     })
   }
 });
@@ -499,6 +509,30 @@ export const validateCsId = value => dispatch => {
     );
   } else {
     dispatch(slice.actions.validateCsId({ error: "", value }));
+  }
+};
+
+export const validateOutDate = value => dispatch => {
+  if (value === "") {
+    dispatch(
+      slice.actions.validateOutDate({
+        error: "Ngày hoàn thành lớp học không được để trống!",
+        value
+      })
+    );
+  } else {
+    const regex = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
+    const checkingResult = regex.test(value);
+    if (!checkingResult) {
+      dispatch(
+        slice.actions.validateOutDate({
+          error: "Ngày hoàn thành lớp học không hợp lệ!",
+          value
+        })
+      );
+    } else {
+      dispatch(slice.actions.validateOutDate({ error: "", value }));
+    }
   }
 };
 
