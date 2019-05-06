@@ -8,7 +8,7 @@ $thirdColor: #e9ca73;
   border-radius: 2px;
   background: #dcdcdc;
   display: flex;
-  height: 400px;
+  height: 525px;
   .sSideDialog {
     display: flex;
     width: 250px;
@@ -79,7 +79,7 @@ $thirdColor: #e9ca73;
       margin: 10px;
       background: #fff;
       border-radius: 2px;
-      height: 340px;
+      height: 465px;
       overflow-y: auto;
     }
   }
@@ -207,7 +207,7 @@ $thirdColor: #e9ca73;
   }
 }
 
-/*styling label input*/
+/*styling form, label, input*/
 .form {
   padding: 5px;
   .formItem {
@@ -235,6 +235,11 @@ $thirdColor: #e9ca73;
     width: 270px;
     background: #dcdcdc;
     outline-style: none;
+  }
+}
+.addForm {
+  .formItem {
+    min-height: 35px;
   }
 }
 .addForm,
@@ -272,6 +277,16 @@ $thirdColor: #e9ca73;
 .detailForm {
   textarea {
     background: #fff;
+  }
+  .formItem {
+    min-height: 25px;
+  }
+}
+.childForm {
+  input {
+    width: 225px;
+    background: #dcdcdc;
+    padding: 5px;
   }
 }
 
@@ -430,6 +445,14 @@ $thirdColor: #e9ca73;
         margin-right: 15px;
         font-size: 10px;
       }
+    }
+  }
+
+  .childForm {
+    input {
+      width: 150px;
+      background: #dcdcdc;
+      padding: 5px;
     }
   }
 }

@@ -114,6 +114,13 @@ const classService = {
         OutDate: outDate
       })
       .then(res => res.data);
+  },
+
+  /*Kết thúc lớp học chính của học sinh*/
+  finishClass: studentId => {
+    fetch
+      .put(`/classstudent/finishclass?id=${studentId}`)
+      .then(res => console.log(res));
   }
 };
 

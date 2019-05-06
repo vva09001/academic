@@ -54,7 +54,7 @@ class LoggedPage extends Component {
     return (
       <React.Fragment>
         <Navigation closeSideMenu={this.closeSideMenu} />
-        {this.state.openSideMenu && window.innerWidth <= 728 && (
+        {this.state.openSideMenu && window.innerWidth <= 1024 && (
           <Backdrop closeBackdrop={this.closeSideMenu} />
         )}
         {this.state.openSideMenu && (

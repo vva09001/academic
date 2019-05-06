@@ -129,6 +129,15 @@ const slice = createSlice({
       ...state,
       loadingChangeClass: false,
       error: action.payload
+    }),
+    resetState: (state, action) => ({
+      ...state,
+      listWaitingStudents: [],
+      addStudentPage: 1,
+      totalAddAble: 0,
+      programme_id: "",
+      ss_id: 4,
+      searchAddStudent: ""
     })
   }
 });
@@ -227,7 +236,7 @@ export const getWaitingStudents = (
 export const addStudentIntoClass = (
   classId,
   studentData,
-  endDate
+  outDate
 ) => async dispatch => {
   let form = {
     studentId: studentData.studentId,
@@ -247,9 +256,11 @@ export const addStudentIntoClass = (
     const post = await classService.addStudentIntoClass(
       classId,
       studentData.studentId,
-      endDate
+      outDate
     );
-    await studentService.editStudent(form, studentData.studentId);
+    if (studentData._StudentStatus.ssId !== 2) {
+      await studentService.editStudent(form, studentData.studentId);
+    }
     dispatch(slice.actions.postSuccess(post));
   } catch (error) {
     dispatch(slice.actions.postFail(error.message));
@@ -288,10 +299,16 @@ export const changeStudentClass = (
 ) => async dispatch => {
   dispatch(slice.actions.postStart());
   try {
+    await classService.finishClass(studentId);
     const post = await classService.changeClass(studentId, classId, endDate);
     dispatch(slice.actions.postSuccess(post));
   } catch (error) {
     dispatch(slice.actions.postFail(error.message));
   }
 };
+
+export const resetState = () => dispatch => {
+  dispatch(slice.actions.resetState());
+};
+
 export default slice;
