@@ -10,8 +10,10 @@ const slice = createSlice({
     isListStudentDialogOpen: false,
     isListAddStudentDialogOpen: false,
     isChangeClassDialogOpen: false,
+    isListClassOpen: false,
     detailDialogData: null,
     classId: "",
+    studentId: "",
     endDate: null,
     editDialogData: {
       fullName: "",
@@ -141,6 +143,16 @@ const slice = createSlice({
     closeChangeClassDialog: (state, action) => ({
       ...state,
       isChangeClassDialogOpen: false
+    }),
+    openListClassDialog: (state, action) => ({
+      ...state,
+      isListClassOpen: true,
+      studentId: action.payload
+    }),
+    closeListClassDialog: (state, action) => ({
+      ...state,
+      isListClassOpen: false,
+      studentId: ""
     })
   }
 });
@@ -237,6 +249,14 @@ export const openChangeClassDialog = () => dispatch => {
 
 export const closeChangeClassDialog = () => dispatch => {
   dispatch(slice.actions.closeChangeClassDialog());
+};
+
+export const openListClassDialog = studentId => dispatch => {
+  dispatch(slice.actions.openListClassDialog(studentId));
+};
+
+export const closeListClassDialog = () => dispatch => {
+  dispatch(slice.actions.closeListClassDialog());
 };
 
 export default slice;

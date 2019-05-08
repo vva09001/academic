@@ -5,13 +5,17 @@ const slice = createSlice({
   slice: "student",
   initialState: {
     loading: false,
+    loadingListClass: false,
     list: [],
+    listStudentClass: [],
     page: 1,
+    listClassPage: 1,
     searchKey: "",
     class_id: "",
     ss_id: 2,
     programme_id: "",
     error: null,
+    totalStudentClass: 0,
     total: 0,
     posting: false,
     postData: {},
@@ -60,9 +64,42 @@ const slice = createSlice({
       posting: false,
       error: action.payload,
       isPostingSuccess: false
+    }),
+    getListClassStart: (state, action) => ({
+      ...state,
+      loadingListClass: true,
+      error: null
+    }),
+    getListClassSuccess: (state, action) => ({
+      ...state,
+      loadingListClass: false,
+      listStudentClass: [...action.payload.listStudentClass],
+      listClassPage: action.payload.listClassPage,
+      totalStudentClass: action.payload.totalStudentClass
+    }),
+    getListClassFail: (state, action) => ({
+      ...state,
+      loadingListClass: false,
+      error: action.payload
+    }),
+    resetStudentState: (state, action) => ({
+      ...state,
+      page: 1,
+      listClassPage: 1,
+      searchKey: "",
+      class_id: "",
+      ss_id: 2,
+      programme_id: "",
+      error: null,
+      totalStudentClass: 0,
+      total: 0
     })
   }
 });
+
+export const resetStudentState = () => dispatch => {
+  dispatch(slice.actions.resetStudentState());
+};
 
 export const getStudentData = page => async dispatch => {
   dispatch(slice.actions.loadStart());
@@ -92,7 +129,7 @@ export const search = (
       searchKey,
       class_id,
       ss_id,
-      programme_id,
+      programme_id
     })
   );
   try {
@@ -132,6 +169,25 @@ export const editStudent = (form, studentId) => async dispatch => {
     dispatch(slice.actions.postSuccess(post));
   } catch (error) {
     dispatch(slice.actions.postFail(error.message));
+  }
+};
+
+export const getListStudentClass = (studentId, page) => async dispatch => {
+  dispatch(slice.actions.getListClassStart());
+  try {
+    const listClassData = await studentService.getStudentClasses(
+      studentId,
+      page
+    );
+    dispatch(
+      slice.actions.getListClassSuccess({
+        listStudentClass: listClassData,
+        listClassPage: page,
+        totalStudentClass: listClassData.length
+      })
+    );
+  } catch (error) {
+    dispatch(slice.actions.getListClassFail(error.message));
   }
 };
 

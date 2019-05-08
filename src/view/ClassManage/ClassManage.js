@@ -17,6 +17,7 @@ import ListStudent from "./ClassDialog/ListStudentDialog/ListStudent.container";
 const ClassManage = props => {
   /*------------------------------------------------ */
   useEffect(() => {
+    props.resetStudentState();
     props.toClasses();
     props.getListStatus();
   },[])

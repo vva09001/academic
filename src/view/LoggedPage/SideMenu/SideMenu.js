@@ -4,6 +4,8 @@ import MenuItem from "./MenuItem";
 
 const SideMenu = props => {
   const logout = () => {
+    props.resetStudentState();
+    props.resetClassState();
     props.logout();
     return <Redirect to={"/"} />;
   };
@@ -89,7 +91,7 @@ const SideMenu = props => {
         </li>
         <Link style={{ textDecoration: "none" }} to="/">
           <MenuItem
-            onClick={() => logout && logout()}
+            onClick={logout}
             title="Đăng xuất"
             classes="item"
           />

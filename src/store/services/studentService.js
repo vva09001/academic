@@ -6,8 +6,8 @@ const studentService = {
 
   getStudentData: page =>
     fetch.get(`students?page=${page}&page_size=30`).then(res => res.data),
-  
-    /*Tìm kiếm học sinh */
+
+  /*Tìm kiếm học sinh */
 
   searchStudent: (searchKey, class_id, ss_id, programme_id, page) =>
     fetch
@@ -86,6 +86,15 @@ const studentService = {
         Note: form.note,
         VtcaMainClass: null
       })
+      .then(res => res.data),
+
+  /*Lấy danh sách các lớp đã và đang học của học sinh*/
+
+  getStudentClasses: (studentId, page) =>
+    fetch
+      .get(
+        `/vtcaclass/getclassesbystudentid?id=${studentId}&page=${page}&page_size=30`
+      )
       .then(res => res.data)
 };
 

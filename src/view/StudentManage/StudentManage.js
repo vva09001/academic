@@ -14,11 +14,13 @@ import StudentData from "./StudentData.container";
 import StudentDetail from "./StudentDialog/DetailDialog/Detail.container";
 import AddStudent from "./StudentDialog/AddDialog/Add.container";
 import EditStudent from "./StudentDialog/EditDialog/Edit.container";
+import ListClass from "./StudentDialog/ListClassDialog/ListClass.container";
 
 const StudentMange = props => {
   /*------------------------------------------------ */
   useEffect(() => {
     props.toStudent();
+    props.resetClassState();
     props.getListStatus();
   }, []);
 
@@ -106,6 +108,7 @@ const StudentMange = props => {
               />
             </th>
             <th />
+            <th />
           </tr>
         </thead>
         {props.list.length > 0 && <StudentData />}
@@ -114,6 +117,7 @@ const StudentMange = props => {
       <StudentDetail />
       <AddStudent />
       <EditStudent />
+      <ListClass />
       {props.list.length < 1 && !props.loading && <NoData />}
       {props.loading && (
         <Loading type="TailSpin" height={50} width={50} color="#203e7d" />

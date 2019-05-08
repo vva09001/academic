@@ -120,8 +120,8 @@ const classService = {
   finishClass: studentId => {
     fetch
       .put(`/classstudent/finishclass?id=${studentId}`)
-      .then(res => console.log(res));
-  }
+      .then(res => res.data);
+  },
 };
 
 export default classService;

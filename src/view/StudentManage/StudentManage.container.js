@@ -3,6 +3,7 @@ import StudentManage from "./StudentManage";
 import { search, getStudentData } from "../../store/slice/student.slice";
 import { getListStatus } from "../../store/slice/statistical.slice";
 import { toStudent } from "../../store/slice/title.slice";
+import { resetClassState } from "../../store/slice/class.slice";
 import { openAddDialog } from "../../store/slice/dialogController.slice";
 
 const mapDispatchToProps = dispatch => ({
@@ -12,6 +13,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(search(searchKey, class_id, ss_id, programme_id, page)),
   getListStatus: () => dispatch(getListStatus()),
   openAddDialog: () => dispatch(openAddDialog()),
+  resetClassState: () => dispatch(resetClassState())
 });
 
 const mapStateToProps = state => ({

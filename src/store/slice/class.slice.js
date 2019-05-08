@@ -138,6 +138,17 @@ const slice = createSlice({
       programme_id: "",
       ss_id: 4,
       searchAddStudent: ""
+    }),
+    resetClassState: (state, action) => ({
+      ...state,
+      list: [],
+      page: 1,
+      cs_id: "",
+      programme_id: "",
+      ss_id: 4,
+      searchKey: "",
+      total: 0,
+      error: null
     })
   }
 });
@@ -309,6 +320,10 @@ export const changeStudentClass = (
 
 export const resetState = () => dispatch => {
   dispatch(slice.actions.resetState());
+};
+
+export const resetClassState = () => dispatch => {
+  dispatch(slice.actions.resetClassState());
 };
 
 export default slice;

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import ClassManage from "./ClassManage";
 import { getClassData, search } from "../../store/slice/class.slice";
+import { resetStudentState } from "../../store/slice/student.slice";
 import { toClasses } from "../../store/slice/title.slice";
 import { openAddDialog } from "../../store/slice/dialogController.slice";
 import { getListStatus } from "../../store/slice/statistical.slice";
@@ -10,7 +11,8 @@ const mapDispatchToProps = dispatch => ({
   getListStatus: () => dispatch(getListStatus()),
   toClasses: () => dispatch(toClasses()),
   search: (searchKey, cs_id, page) => dispatch(search(searchKey, cs_id, page)),
-  openAddDialog: () => dispatch(openAddDialog())
+  openAddDialog: () => dispatch(openAddDialog()),
+  resetStudentState: () => dispatch(resetStudentState())
 });
 
 const mapStateToProps = state => ({
